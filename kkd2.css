@@ -156,11 +156,6 @@ article#main-col{
   height: 500px;
   width:50%;
 }
-article#main-col p{
-  border: #000000 solid 1px;
-  padding: 20px;
-  background: #b3a4a496;
-}
 /* Services */
 ul#services li{
   list-style: none;
@@ -179,7 +174,15 @@ footer{
   text-align: center;
 }
 /* Media Queries for responsiveness */
-@media(max-width: 1024px){
+@media screen and (max-width: 1024px) {
+  body {
+    padding-top: 60px; /* Adjusted padding-top */
+  }
+
+  header {
+    padding-bottom: 10px; /* Reduced padding-bottom */
+  }
+
   header #branding,
   header nav,
   header nav li,
@@ -187,26 +190,79 @@ footer{
   #newsletter form,
   #boxes .box,
   article#main-col,
-  aside#sidebar{
-    float:none;
-    text-align:center;
-    width:100%;
+  aside#sidebar {
+    float: none;
+    text-align: center;
+    width: 100%;
   }
-  header{
-    padding-bottom:20px;
+
+  #showcase h1 {
+    margin-top: 20px; /* Adjusted margin-top */
   }
-  #showcase h1{
-    margin-top:30px;
+
+  #newsletter button,
+  .quote button {
+    display: block;
+    width: 100%;
   }
-  #newsletter button, .quote button{
-    display:block;
-    width:100%;
+
+  #newsletter form input[type="email"],
+  .quote input,
+  .quote textarea {
+    width: 100%;
+    margin-bottom: 10px; /* Increased margin-bottom */
   }
-  #newsletter form input[type="email"], .quote input, .quote textarea{
-    width:100%;
-    margin-bottom:5px;
+
+  ul#services li {
+    padding: 10px; /* Adjusted padding */
+  }
+
+  #boxes .box {
+    width: 100%; /* Adjusted width */
+    margin-bottom: 20px; /* Increased margin-bottom */
   }
 }
+
+/* Additional Media Query for even smaller screens if needed */
+@media screen and (max-width: 768px) {
+  header li {
+    padding: 0 10px; /* Reduced padding */
+  }
+
+  header #branding h1 {
+    padding-top: 10px; /* Reduced padding-top */
+    padding-bottom: 10px; /* Reduced padding-bottom */
+  }
+
+  #newsletter h1 {
+    margin-top: 10px; /* Adjusted margin-top */
+  }
+
+  #newsletter form {
+    padding-top: 10px; /* Adjusted padding-top */
+  }
+
+  #newsletter input[type="email"] {
+    width: 100%;
+  }
+
+  #showcase h1 {
+    font-size: 1.8em; /* Adjusted font-size */
+    margin-top: 60px; /* Adjusted margin-top */
+    margin-bottom: 10px; /* Reduced margin-bottom */
+  }
+
+  #newsletter button,
+  .quote button {
+    padding-left: 10px; /* Adjusted padding-left */
+    padding-right: 10px; /* Adjusted padding-right */
+  }
+
+  #boxes .box {
+    padding: 5px; /* Adjusted padding */
+  }
+}
+
 #click-effect {
   position: absolute;
   width: 50px;
@@ -250,26 +306,4 @@ footer{
     display: inline-block;
     border: none;
     transition: all 0.4s ease 0s;
-   /* Add these styles to your existing CSS */
-}
-aside#sidebar2 {
-  align-items: row;
-  max-width: 200px;
-  text-align: center;
-}
-aside#sidebar2 .profile-card {
-  text-align: center;
-  padding: 20px;
-  background: #000000; /* Adjust the background color as needed */
-  color: #ffffff; /* Adjust the text color as needed */
-  border-radius: 2px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
- 
-}
-aside#sidebar2 img {
-  width: 100px; /* Adjust the image width as needed */
-  height: 100px; /* Adjust the image height as needed */
-  border-radius: 50%; /* Make the image circular */
-  margin-bottom: 10px;
 }
