@@ -1,234 +1,275 @@
 body{
-    font: 15px/1.5 Arial, Helvetica, sans-serif;
-    padding:0;
-    margin:0;
-    background-color:#ffffff;
+  font: 15px/1.5 Arial, Helvetica, sans-serif;
+  padding-top: 80px;
+  margin:0;
+  background-color:#ffffff;
+  list-style: none;
+}
+
+/* Global */
+.container{
+  width:80%;
+  margin:auto;
+  overflow:hidden;
+}
+
+ul{
+  margin:0;
+  padding:0;
+}
+
+.button_1{
+  height:38px;
+  background:#000000;
+  border:0;
+  padding-left: 20px;
+  padding-right:20px;
+  color:#ffffff;
+}
+
+.dark{
+  padding:15px;
+  background:#ffffff;
+  color:rgb(0, 0, 0);
+  margin-top:10px;
+  margin-bottom:10px;
+}
+/* Header **/
+header{
+  background:#000000;
+  padding: 1px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-top: #ffffff 1px solid;
+  border-bottom:#ffffff 1px solid;
+}
+@keyframes back{
+  100%{
+    background-position: 2000px 0;
   }
-  
-  /* Global */
-  .container{
-    width:80%;
-    margin:auto;
-    overflow:hidden;
+}
+header h1{
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff;
+  background: url(back.png);
+  -webkit-background-clip: text;
+  animation: back 20s linear infinite;
+}
+header a{
+  color:#ffffff;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:14px;
+}
+
+header li{
+  float:left;
+  display:inline;
+  padding: 0 20px 0 20px;
+  margin-top: 12px;
+}
+
+header #branding{
+  float:left;
+}
+
+header #branding h1{
+  margin:0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+header nav{
+  padding-top: 20px;
+  float:right;
+}
+
+header .highlight, header .current a{
+  font-weight:bold;
+  color: rgba(146, 146, 146, 0.699);
+}
+
+header a:hover {
+  font-weight: bold;
+  color: #000000;
+  text-decoration: underline; /* Added underline */
+  background: #d1c8c8;
+  border: none;
+  transition: all 0.5s ease 0s;
+}
+/* Showcase */
+#showcase{
+  min-height:500px;
+  background:url('grey.png') no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align:center;
+  color:#ffffff;
+}
+
+#showcase h1{
+  margin-top:100px;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+#showcase p{
+  font-size:20px;
+}
+
+/* Newsletter */
+#newsletter{
+  color: rgb(255, 255, 255);
+  background: #000000;
+}
+
+#newsletter h1{
+  float:left;
+  margin-top:20px;
+}
+
+#newsletter form {
+  padding-top: 16px;
+  float:right;
+}
+
+#newsletter input[type="email"]{
+  padding:4px;
+  height:20px;
+  width:200px;
+}
+/* Sidebar */
+aside#sidebar{
+  float:left;
+  width:50%;
+}
+aside#sidebar .quote input, aside#sidebar .quote textarea{
+  width: 100%;
+  padding:5px;
+  background:#b3a4a496;
+}
+/* Main-col */
+article#main-col{
+  padding-bottom: 50px;
+  float: left;
+  height: 500px;
+  width:50%;
+}
+article#main-col p{
+  border: #000000 solid 1px;
+  padding: 20px;
+  background: #b3a4a496;
+}
+/* Services */
+ul#services li{
+  list-style: none;
+  color: rgb(0, 0, 0);
+  padding:20px;
+  border: #000000 solid 1px;
+  margin-bottom:5px;
+  background:#b3a4a496;
+}
+
+footer{
+  padding:20px;
+  margin-top:20px;
+  color:#ffffff;
+  background-color:#000000;
+  text-align: center;
+}
+/* Media Queries for responsiveness */
+@media(max-width: 1024px){
+  header #branding,
+  header nav,
+  header nav li,
+  #newsletter h1,
+  #newsletter form,
+  #boxes .box,
+  article#main-col,
+  aside#sidebar{
+    float:none;
+    text-align:center;
+    width:100%;
   }
-  
-  ul{
-    margin:0;
-    padding:0;
-  }
-  
-  .button_1{
-    height:38px;
-    background:#000000;
-    border:0;
-    padding-left: 20px;
-    padding-right:20px;
-    color:#ffffff;
-  }
-  
-  .dark{
-    padding:15px;
-    background:#ffffff;
-    color:rgb(0, 0, 0);
-    margin-top:10px;
-    margin-bottom:10px;
-  }
-  
-  /* Header **/
   header{
-    background:#000000;
-    color:#ffffff;
-    padding-top:30px;
-    min-height:70px;
-    border-bottom:#ffffff 3px solid;
+    padding-bottom:20px;
   }
-  
-  header a{
-    color:#ffffff;
-    text-decoration:none;
-    text-transform: uppercase;
-    font-size:16px;
+  #showcase h1{
+    margin-top:30px;
   }
-  
-  header li{
-    float:left;
-    display:inline;
-    padding: 0 20px 0 20px;
+  #newsletter button, .quote button{
+    display:block;
+    width:100%;
   }
-  
-  header #branding{
-    float:left;
+  #newsletter form input[type="email"], .quote input, .quote textarea{
+    width:100%;
+    margin-bottom:5px;
   }
-  
-  header #branding h1{
-    margin:0;
-  }
-  
-  header nav{
-    float:right;
-    margin-top:10px;
-  }
-  
-  header .highlight, header .current a{
-    color:#ffffff;
-    font-weight:bold;
-  }
-  
-  header a:hover{
-    font-weight:bold;
-    color: #000000 !important;
-    text-transform: uppercase;
-    text-decoration: none;
+}
+#click-effect {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 4px solid #000000; /* Border color */
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.1s ease-in-out;
+  pointer-events: none; /* Ensure the effect doesn't interfere with clicks */
+  box-sizing: border-box;
+}
+.highlight {
+  color: #ffffff;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+.social-icon {
+  margin: 0 10px;
+  transition: opacity 0.2s ease-in-out;
+}
+.social-icon:hover {
+  opacity: 0.7;
+}
+#boxes{
+  margin-top:20px;
+}
+#boxes .box{
+  float:left;
+  text-align: center;
+  width:30%;
+  padding:10px;
+}
+#boxes .box img{
+  width:90px;
+}
+#boxes .box:hover{
+    transform: scale(1.1);
     background: #ffffff;
-    padding: 10px;
-    border-radius: 25px;
     display: inline-block;
     border: none;
     transition: all 0.4s ease 0s;
-  }
-  
-  /* Showcase */
-  #showcase{
-    min-height:400px;
-    background:url('kkdd.jpg') no-repeat;
-    background-position: center;
-    background-size: cover;
-    text-align:center;
-    color:#ffffff;
-  }
-  
-  #showcase h1{
-    margin-top:100px;
-    font-size:55px;
-    margin-bottom:10px;
-  }
-  
-  #showcase p{
-    font-size:20px;
-  }
-  
-  /* Newsletter */
-  #newsletter{
-    padding:15px;
-    color:#ffffff;
-    background:#000000
-  }
-  
-  #newsletter h1{
-    float:left;
-  }
-  
-  #newsletter form {
-    float:right;
-    margin-top:15px;
-  }
-  
-  #newsletter input[type="email"]{
-    padding:4px;
-    height:25px;
-    width:250px;
-  }
-  
-  /* Boxes */
-  #boxes{
-    margin-top:20px;
-  }
-  
-  #boxes .box{
-    float:left;
-    text-align: center;
-    width:30%;
-    padding:10px;
-  }
-  
-  #boxes .box img{
-    width:90px;
-  }
-  #boxes .box:hover{
-      transform: scale(1.1);
-      background: #ffffff;
-      display: inline-block;
-      border: none;
-      transition: all 0.4s ease 0s;
-     
-  }
-  
-  /* Sidebar */
-  aside#sidebar{
-    float:right;
-    width:30%;
-    margin-top:10px;
-  }
-  
-  aside#sidebar .quote input, aside#sidebar .quote textarea{
-    width:90%;
-    padding:5px;
-  }
-  
-  /* Main-col */
-  article#main-col{
-    float:left;
-    width:65%;
-  }
-  
-  /* Services */
-  ul#services li{
-    list-style: none;
-    padding:20px;
-    border: #000000 solid 1px;
-    margin-bottom:5px;
-    background:#e6e6e6;
-  }
-  
-  footer{
-    padding:20px;
-    margin-top:20px;
-    color:#ffffff;
-    background-color:#000000;
-    text-align: center;
-  }
-  
-  /* Media Queries */
-  @media(max-width: 768px){
-    header #branding,
-    header nav,
-    header nav li,
-    #newsletter h1,
-    #newsletter form,
-    #boxes .box,
-    article#main-col,
-    aside#sidebar{
-      float:none;
-      text-align:center;
-      width:100%;
-    }
-  
-    header{
-      padding-bottom:20px;
-    }
-  
-    #showcase h1{
-      margin-top:40px;
-    }
-  
-    #newsletter button, .quote button{
-      display:block;
-      width:100%;
-    }
-  
-    #newsletter form input[type="email"], .quote input, .quote textarea{
-      width:100%;
-      margin-bottom:5px;
-    }
+   /* Add these styles to your existing CSS */
 }
-  #click-effect {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #000000; /* Border color */
-    border-radius: 50%;
-    transform: scale(0);
-    transition: transform 0.2s ease-in-out;
-    pointer-events: none; /* Ensure the effect doesn't interfere with clicks */
-    box-sizing: border-box;
-  }
+aside#sidebar2 {
+  align-items: row;
+  max-width: 200px;
+  text-align: center;
+}
+aside#sidebar2 .profile-card {
+  text-align: center;
+  padding: 20px;
+  background: #000000; /* Adjust the background color as needed */
+  color: #ffffff; /* Adjust the text color as needed */
+  border-radius: 2px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+ 
+}
+aside#sidebar2 img {
+  width: 100px; /* Adjust the image width as needed */
+  height: 100px; /* Adjust the image height as needed */
+  border-radius: 50%; /* Make the image circular */
+  margin-bottom: 10px;
+}
